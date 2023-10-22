@@ -5,7 +5,7 @@ import os
 import pycaret
 
 # set App PageS and style
-st.title("AUTO-MACHINE LEARNING APP DEVELOPED BY ELVIS DARKO")
+st.title("AUTO-MACHINE LEARNING APP")
 
 css_style = {
     "icon": {"color": "white"},
@@ -22,9 +22,13 @@ auto_url = "https://github.com/elvis-darko/AUTO-MACHINE-LEARNING-WEB-APP-USING-S
 def home_page():
     st.image(auto_url, use_column_width=True)
 
+
 # Set up data upload page
 def data_upload_page():
-    st.write("hello world")
+    st.subheader("UPLOAD YOUR DATA FOR MODELING")
+    data = st.file_uploader("Please, upload your dataset here")
+    if data:
+        pass
 
 # set up profiling page
 def data_profiling_page():
@@ -37,7 +41,7 @@ def model_download_page():
 
 # set up developer page
 def developers_page():
-     st.title('THE APP DEVELOPERS')
+     st.subheader('THE APP DEVELOPERS')
      dev_url = "https://github.com/elvis-darko/Team_Zurich_Capstone_Project/raw/main/Assets/images/developer.png"
      st.image(dev_url, use_column_width=True)
      st.write(f"""
@@ -48,6 +52,7 @@ def developers_page():
 # Set up option menu (side bar)
 with st.sidebar:
     st.image(auto_url, use_column_width=True)
+    st.info("This applicaton allows a user to build and download an automated machine learning model using streamlit, pandas profiling and pycaret")
     selected = option_menu(
         menu_title=None,
         options=["Home", "Data Upload Page", "Data Profiling Page", "Developer Page"],
