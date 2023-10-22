@@ -36,6 +36,11 @@ def data_upload_page():
         # Save data to app directory
         df.to_csv("sourcedata.csv", index=None)
 
+
+# save dataset to os to be used at anytime
+if os.path.exists("sourcedata.csv"):
+    data = pd.read_csv("sourcedata.csv", index_col=None)
+
         
 
 # set up profiling page
