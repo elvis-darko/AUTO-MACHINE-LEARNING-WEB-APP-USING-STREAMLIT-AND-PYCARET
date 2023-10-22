@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 import pickle
 from streamlit_option_menu import option_menu
 import os
@@ -28,7 +29,10 @@ def data_upload_page():
     st.subheader("UPLOAD YOUR DATA FOR MODELING")
     data = st.file_uploader("Please, upload your dataset here")
     if data:
-        pass
+        # create a dataframe to read and store data
+        df = pd.read_csv(data)
+        st.dataframe(df)
+        
 
 # set up profiling page
 def data_profiling_page():
