@@ -30,8 +30,12 @@ def data_upload_page():
     data = st.file_uploader("Please, upload your dataset here")
     if data:
         # create a dataframe to read and store data
-        df = pd.read_csv(data)
+        df = pd.read_csv(data, index_col=None)
         st.dataframe(df)
+
+        # Save data to app directory
+        df.to_csv("sourcedata.csv", index=None)
+
         
 
 # set up profiling page
