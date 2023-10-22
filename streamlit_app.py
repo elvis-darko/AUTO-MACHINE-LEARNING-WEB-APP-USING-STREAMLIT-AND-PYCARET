@@ -19,14 +19,14 @@ auto_url = "https://github.com/elvis-darko/AUTO-MACHINE-LEARNING-WEB-APP-USING-S
 
 
 def home_page():
-    st.title()
+    st.image(auto_url, use_column_width=True)
 
 def developers_page():
      st.title('THE APP DEVELOPERS')
      dev_url = "https://github.com/elvis-darko/Team_Zurich_Capstone_Project/raw/main/Assets/images/developer.png"
-     st.image(dev_url, caption='Team Zurich Churn Prediction App', use_column_width=True)
+     st.image(dev_url, use_column_width=True)
      st.write(f"""
-    <p>This Auto-Machine Learning App was dvevloped by Elvis Darko with guidance from Nicholas Renotte:</p>
+    <p>This Auto-Machine Learning App was dvevloped by Elvis Darko with guidance from Nicholas Renotte</p>
     """, unsafe_allow_html=True)
 
 
