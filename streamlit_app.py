@@ -26,7 +26,7 @@ def developers_page():
      dev_url = "https://github.com/elvis-darko/Team_Zurich_Capstone_Project/raw/main/Assets/images/developer.png"
      st.image(dev_url, caption='Team Zurich Churn Prediction App', use_column_width=True)
      st.write(f"""
-    <p>The following individuals contributed to the development of this streamlit churn app:</p>
+    <p>This Auto-Machine Learning App was dvevloped by Elvis Darko with guidance from Nicholas Renotte:</p>
     """, unsafe_allow_html=True)
 
 
