@@ -18,9 +18,21 @@ css_style = {
 auto_url = "https://github.com/elvis-darko/AUTO-MACHINE-LEARNING-WEB-APP-USING-STREAMLIT-AND-PYCARET/raw/main/images/AUTOML.jpg"
 
 
+# setup home page of app
 def home_page():
     st.image(auto_url, use_column_width=True)
 
+# Set up data upload page
+def data_upload_page():
+
+# set up profiling page
+def data_profiling_page():
+
+# set up downlaod page
+def model_download_page():
+
+
+# set up developer page
 def developers_page():
      st.title('THE APP DEVELOPERS')
      dev_url = "https://github.com/elvis-darko/Team_Zurich_Capstone_Project/raw/main/Assets/images/developer.png"
@@ -43,8 +55,14 @@ with st.sidebar:
 if selected == "Home":
     home_page()
 
-elif selected == "Prediction":
-    prediction_page()
+elif selected == "Data Upload Page":
+    data_upload_page()
 
-elif selected == "Developers":
+elif selected == "Data Profiling Page":
+    data_profiling_page()
+
+elif selected == "Model Downlaod Page":
+    model_download_page()
+
+elif selected == "Developer Page":
     developers_page()
