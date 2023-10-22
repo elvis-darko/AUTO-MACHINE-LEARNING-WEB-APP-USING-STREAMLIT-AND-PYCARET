@@ -50,8 +50,8 @@ with st.sidebar:
     st.image(auto_url, use_column_width=True)
     selected = option_menu(
         menu_title=None,
-        options=["Home", "Prediction", "Developers"],
-        icons=["house", "droplet", "people"],
+        options=["Home", "Data Upload Page", "Data Profiling Page", "Developer Page"],
+        icons=["house", "cloud-upload", "list-task", "people"],
         styles=css_style
    )
     
