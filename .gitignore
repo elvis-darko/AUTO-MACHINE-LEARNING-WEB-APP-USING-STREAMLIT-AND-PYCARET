@@ -131,3 +131,7 @@ dmypy.json
 
 # Checkpoints
 .ipynb_checkpoints
+
+# sourcedata
+sourcedata.csv
+sourcedata
