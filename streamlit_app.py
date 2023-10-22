@@ -24,12 +24,15 @@ def home_page():
 
 # Set up data upload page
 def data_upload_page():
+    st.write("hello world")
 
 # set up profiling page
 def data_profiling_page():
+    st.write("hello world")
 
 # set up downlaod page
 def model_download_page():
+    st.write("hello world")
 
 
 # set up developer page
