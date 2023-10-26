@@ -1,9 +1,13 @@
 import streamlit as st
 import pandas as pd
+import pandas_profiling
+from pandas_profiling import ProfileReport
 import pickle
 from streamlit_option_menu import option_menu
+from streamlit_pandas_profiling import st_profile_report
 import os
 import pycaret
+
 
 # set App PageS and style
 st.title("AUTO-MACHINE LEARNING APP")
@@ -13,6 +17,10 @@ css_style = {
     "nav-link": {"--hover-color": "grey"},
     "nav-link-selected": {"background-color": "#FF4C1B"},
 }
+
+# save dataset to os to be used at anytime
+if os.path.exists("sourcedata.csv"):
+    df = pd.read_csv("sourcedata.csv", index_col=None)
 
 
 # inks to images
@@ -31,21 +39,21 @@ def data_upload_page():
     if data:
         # create a dataframe to read and store data
         df = pd.read_csv(data, index_col=None)
-        st.dataframe(df)
-
-        # Save data to app directory
         df.to_csv("sourcedata.csv", index=None)
-
-
-# save dataset to os to be used at anytime
-if os.path.exists("sourcedata.csv"):
-    data = pd.read_csv("sourcedata.csv", index_col=None)
+        st.dataframe(df)
+    
+        report = ProfileReport(df)
+        st_profile_report(report)
 
         
 
 # set up profiling page
 def data_profiling_page():
-    st.write("hello world")
+    st.subheader("AUTOMATED EXPLORATORY DATA ANALYSIS")
+    
+    # Data Profile
+    report = df.profile_report()
+    st_profile_report(report)
 
 # set up downlaod page
 def model_download_page():
@@ -68,8 +76,8 @@ with st.sidebar:
     st.info("This applicaton allows a user to build and download an automated machine learning model using streamlit, pandas profiling and pycaret")
     selected = option_menu(
         menu_title=None,
-        options=["Home", "Data Upload Page", "Data Profiling Page", "Developer Page"],
-        icons=["house", "cloud-upload", "list-task", "people"],
+        options=["Home", "Data Upload Page", "Data Profiling Page", "Model Downlaod Page", "Developer Page"],
+        icons=["house", "cloud-upload", "list-task", "download", "people"],
         styles=css_style
    )
     
