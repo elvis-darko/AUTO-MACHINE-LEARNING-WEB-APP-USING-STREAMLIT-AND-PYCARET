@@ -34,6 +34,7 @@ def home_page():
 # Set up data upload page
 def data_upload_page():
     st.subheader("UPLOAD YOUR DATA FOR MODELING")
+    st.info("In this section, users can upload their dataset into the app. Uers can also have first hand view of sections of their dat, such as the columns")
     data = st.file_uploader("Please, upload your dataset here")
     if data:
         # create a dataframe to read and store data
@@ -57,9 +58,10 @@ def data_profiling_page():
 
 # Set up Auto Machine Learning
 def auto_machine_learning_page():
-    st.subheader("AUTO MACHINE LEARNING COMPUTATION")
+    st.subheader("AUTOMATED MACHINE LEARNING COMPUTATION")
     st.info("In this section, the app builds and trains different machine learning models with the train data. User has to ONLY identify and enter the target varible")
-
+    target = st.selectbox("Please, select your target feature", df.columns)
+    setup(df, target = target, silent=True)
 
     
 
