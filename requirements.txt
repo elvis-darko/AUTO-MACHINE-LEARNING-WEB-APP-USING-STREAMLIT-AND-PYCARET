@@ -5,3 +5,4 @@ numpy
 pycaret
 pandas-profiling
 streamlit_pandas_profiling
+ydata-profiling
