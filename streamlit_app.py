@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
-import pandas_profiling
-from pandas_profiling import ProfileReport
+from ydata_profiling import ProfileReport
 import pickle
 from streamlit_option_menu import option_menu
 from streamlit_pandas_profiling import st_profile_report
@@ -52,7 +51,7 @@ def data_profiling_page():
     st.subheader("AUTOMATED EXPLORATORY DATA ANALYSIS")
     
     # Data Profile
-    report = df.profile_report()
+    report = ProfileReport(df)
     st_profile_report(report)
 
 # set up downlaod page
@@ -90,7 +89,7 @@ elif selected == "Data Upload Page":
 elif selected == "Data Profiling Page":
     data_profiling_page()
 
-elif selected == "Model Downlaod Page":
+elif selected == "Model Download Page":
     model_download_page()
 
 elif selected == "Developer Page":
