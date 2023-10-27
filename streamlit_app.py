@@ -75,7 +75,7 @@ with st.sidebar:
     st.info("This applicaton allows a user to build and download an automated machine learning model using streamlit, pandas profiling and pycaret")
     selected = option_menu(
         menu_title=None,
-        options=["Home", "Data Upload Page", "Data Profiling Page", "Model Downlaod Page", "Developer Page"],
+        options=["Home", "Data Upload Page", "Data Profiling Page", "Model Downloasd Page", "Developer Page"],
         icons=["house", "cloud-upload", "list-task", "download", "people"],
         styles=css_style
    )
