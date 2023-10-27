@@ -5,7 +5,7 @@ import pickle
 from streamlit_option_menu import option_menu
 from streamlit_pandas_profiling import st_profile_report
 import os
-import pycaret
+from pycaret.classification import setup, compare_models, pull, save_model
 
 
 # set App PageS and style
@@ -49,14 +49,24 @@ def data_upload_page():
 # set up profiling page
 def data_profiling_page():
     st.subheader("AUTOMATED EXPLORATORY DATA ANALYSIS")
-    
+    st.info("In this section, the app performs an automated exploratory analysis on the data. This helps to give users more insight and understanding of their data")
     # Data Profile
     report = ProfileReport(df)
     st_profile_report(report)
 
+
+# Set up Auto Machine Learning
+def auto_machine_learning_page():
+    st.subheader("AUTO MACHINE LEARNING COMPUTATION")
+    st.info("In this section, the app builds and trains different machine learning models with the train data. User has to ONLY identify and enter the target varible")
+
+
+    
+
 # set up downlaod page
 def model_download_page():
-    st.write("hello world")
+    st.subheader("DOWNLOAD BEST MODEL")
+    st.info("In this section, the app allows users to download and save their best performing models to their local computers")
 
 
 # set up developer page
@@ -75,8 +85,8 @@ with st.sidebar:
     st.info("This applicaton allows a user to build and download an automated machine learning model using streamlit, pandas profiling and pycaret")
     selected = option_menu(
         menu_title=None,
-        options=["Home", "Data Upload Page", "Data Profiling Page", "Model Downloasd Page", "Developer Page"],
-        icons=["house", "cloud-upload", "list-task", "download", "people"],
+        options=["Home", "Data Upload Page", "Data Profiling Page", "Auto Machine Learning Page", "Model Download Page", "Developer Page"],
+        icons=["house", "cloud-upload", "list-task", "machine", "download", "people"],
         styles=css_style
    )
     
@@ -88,6 +98,9 @@ elif selected == "Data Upload Page":
 
 elif selected == "Data Profiling Page":
     data_profiling_page()
+
+elif selected == "Auto Machine Learning Page":
+    auto_machine_learning_page()
 
 elif selected == "Model Download Page":
     model_download_page()
