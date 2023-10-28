@@ -61,7 +61,17 @@ def auto_machine_learning_page():
     st.subheader("AUTOMATED MACHINE LEARNING COMPUTATION")
     st.info("In this section, the app builds and trains different machine learning models with the train data. User has to ONLY identify and enter the target varible")
     target = st.selectbox("Please, select your target feature", df.columns)
-    setup(df, target = target, silent=True)
+    if st.button("Train model"):
+        setup(df, target = target)
+        setup_df = pull()
+        st.info("This is the automated machine learning settings")
+        st.dataframe(setup_df)
+        best_model = compare_models()
+        compare_df = pull()
+        st.info("This is the Performance of the machine learning models")
+        st.dataframe(compare_df)
+        best_model
+        save_model(best_model, "best_model")
 
     
 
@@ -69,6 +79,8 @@ def auto_machine_learning_page():
 def model_download_page():
     st.subheader("DOWNLOAD BEST MODEL")
     st.info("In this section, the app allows users to download and save their best performing models to their local computers")
+    with open("best_model.pkl", 'rb') as f:
+        st.download_button("Please download best model", f, "auto_trained_model.pkl")
 
 
 # set up developer page
