@@ -51,7 +51,7 @@ def data_upload_page():
 def data_profiling_page():
     st.subheader("AUTOMATED EXPLORATORY DATA ANALYSIS")
     st.info("In this section, the app performs an automated exploratory analysis on the data. This helps to give users more insight and understanding of their data")
-    st.info("If no data is uploaded at the Data Upload Page, this page will show an error message.")
+    st.info("NOTE : If no data is uploaded at the Data Upload Page, this page will show an error message.")
     # Data Profile
     report = ProfileReport(df)
     st_profile_report(report)
@@ -61,7 +61,7 @@ def data_profiling_page():
 def auto_machine_learning_page():
     st.subheader("AUTOMATED MACHINE LEARNING COMPUTATION")
     st.info("In this section, the app builds and trains different machine learning models with the train data. User has to ONLY identify and enter the target varible")
-    st.info("If no data is uploaded at the Data Upload Page, this page will show an error message.")
+    st.info("NOTE : If no data is uploaded at the Data Upload Page, this page will show an error message.")
     target = st.selectbox("Please, select your target feature", df.columns)
     if st.button("Train model"):
         setup(df, target = target)
@@ -81,7 +81,7 @@ def auto_machine_learning_page():
 def model_download_page():
     st.subheader("DOWNLOAD BEST MODEL")
     st.info("In this section, the app allows users to download and save their best performing models to their local computers")
-    st.info("If no data is uploaded at the Data Upload Page, this page will show an error message.")
+    st.info("NOTE : If no data is uploaded at the Data Upload Page, this page will show an error message.")
     with open("best_model.pkl", 'rb') as f:
         st.download_button("Please download best model", f, "auto_trained_model.pkl")
 
