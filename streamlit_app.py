@@ -36,16 +36,14 @@ def home_page():
 # Set up data upload page
 def data_upload_page():
     st.subheader("UPLOAD YOUR DATA FOR MODELING")
-    st.info("In this section, users can upload their dataset into the app. Uers can also have first hand view of sections of their dat, such as the columns")
+    st.info("In this section, users can upload their dataset into the app. Users can also have first hand view of sections of their data, such as the columns")
     data = st.file_uploader("Please, upload your dataset here")
     if data:
         # create a dataframe to read and store data
         df = pd.read_csv(data, index_col=None)
         df.to_csv("sourcedata.csv", index=None)
         st.dataframe(df)
-    
-        report = ProfileReport(df)
-        st_profile_report(report)
+
 
         
 
