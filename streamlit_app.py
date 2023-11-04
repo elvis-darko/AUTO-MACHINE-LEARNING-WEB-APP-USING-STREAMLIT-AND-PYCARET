@@ -99,8 +99,8 @@ with st.sidebar:
     st.info("This applicaton allows a user to build and download an automated machine learning model using streamlit, pandas profiling and pycaret")
     selected = option_menu(
         menu_title=None,
-        options=["Home", "Data Upload Page", "Data Profiling Page", "Auto Machine Learning Page", "Model Download Page", "Developer Page"],
-        icons=["house", "cloud-upload", "list-task", "machine", "download", "people"],
+        options=["Home", "Data Upload Page", "Data Profiling Page", "Auto ML Page", "Model Download Page", "Developer Page"],
+        icons=["house", "cloud-upload", "clipboard-data", "cpu", "download", "people"],
         styles=css_style
    )
     
@@ -113,7 +113,7 @@ elif selected == "Data Upload Page":
 elif selected == "Data Profiling Page":
     data_profiling_page()
 
-elif selected == "Auto Machine Learning Page":
+elif selected == "Auto ML Page":
     auto_machine_learning_page()
 
 elif selected == "Model Download Page":
