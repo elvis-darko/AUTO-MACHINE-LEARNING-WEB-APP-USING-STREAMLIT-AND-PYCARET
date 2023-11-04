@@ -6,6 +6,8 @@ from streamlit_option_menu import option_menu
 from streamlit_pandas_profiling import st_profile_report
 import os
 from pycaret.classification import setup, compare_models, pull, save_model
+import warnings
+warnings.filterwarnings("ignore")
 
 
 # set App PageS and style
