@@ -2,12 +2,15 @@
 ## REPOSITORY OVERVIEW
 This repository contains a practice streamlit app that automatically builds,  trains and downloads(optional) a machine learning model. 
 
+
+
 ## TECH STACK
 The tools and tech stack used in this repo include:
 - Streamlit
 - Docker
 - Pycaret 
-- Pandas Profiling (now updated and maintained as **)
+- Pandas Profiling (now updated and maintained as *ydata-profiling*)
+- Hugging Face
 
 ## UPLOADING DATASET
 
