@@ -13,7 +13,7 @@ The tools and tech stack used in this repo include:
 - Pandas Profiling (now updated and maintained as *ydata-profiling*)
 
 ## UPLOADING DATASET
-
+In the data upload page, the user uploads the desired dataset from which machine learning models will be built.
 
 ## PERFORMING AUTO MACHINE LEARNING
 
