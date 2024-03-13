@@ -10,7 +10,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-# set App PageS and style
+# set up App page and style
 st.title("AUTO-MACHINE LEARNING APP")
 
 css_style = {
