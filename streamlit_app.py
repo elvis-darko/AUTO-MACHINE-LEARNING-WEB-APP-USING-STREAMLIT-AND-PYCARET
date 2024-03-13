@@ -73,7 +73,6 @@ def auto_machine_learning_page():
         st.info("This is the Performance of the machine learning models")
         st.dataframe(compare_df)
         best_model
-        save_model(best_model, "best_model")
 
     
 
@@ -82,6 +81,12 @@ def model_download_page():
     st.subheader("DOWNLOAD BEST MODEL")
     st.info("In this section, the app allows users to download and save their best performing models to their local computers")
     st.info("NOTE : If no data is uploaded at the Data Upload Page, this page will show an error message.")
+    best_model = compare_models()
+    compare_df = pull()
+    st.info("This is the Performance of the machine learning models")
+    st.dataframe(compare_df)
+    best_model
+    save_model(best_model, "best_model")
     with open("best_model.pkl", 'rb') as f:
         st.download_button("Please download best model", f, "auto_trained_model.pkl")
 
