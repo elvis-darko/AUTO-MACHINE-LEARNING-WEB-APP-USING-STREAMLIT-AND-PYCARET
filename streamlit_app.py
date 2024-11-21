@@ -93,11 +93,11 @@ def model_download_page():
 
 # set up developer page
 def developers_page():
-     st.subheader('THE APP DEVELOPERS')
+     st.subheader('THE APP DEVELOPER')
      dev_url = "https://github.com/elvis-darko/Team_Zurich_Capstone_Project/raw/main/Assets/images/developer.png"
      st.image(dev_url, use_column_width=True)
      st.write(f"""
-    <p>This Auto-Machine Learning App was dvevloped by Elvis Darko with guidance from Nicholas Renotte</p>
+    <p>This Auto-Machine Learning App was dvevloped by Elvis Darko. Elvis Darko is a budding Data Scientist who aspires to be an Artificial Intelligence Engineer. Coming from the commonly non-traditional computer science and mathematics background, Elvis Darko taught himself to code in Python programming language. With a fair leve of coding in python, he joined the Data Science professional training program at Azubi Africa where his skills were honed and was introduced to machine learning. It was from this immensely beneficial program that Elvis came to know about Artificial Intelligence. From there, he has pursued a path of learning and training in the field. In not so long a period to come, elvis will be one of the leading voices and faces of Artificial Intelligence in Africa and the world</p>
     """, unsafe_allow_html=True)
 
 
